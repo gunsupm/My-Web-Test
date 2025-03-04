@@ -265,31 +265,30 @@ body {
     display: block;
 	width: fit-content;
 	font-size: 4rem;
-	position: relative;
+	position: absolute;
 	color: #000000;
     text-transform: uppercase;
-    margin-bottom: -10px;
-	margin-left: -550px;
+    top: 350px;
+	left: 400px;
 }
 #About .Aboutfont
 {
 	width: fit-content;
 	font-size: 2rem;
-	position: relative;
+	position: absolute;
     text-transform: uppercase;
-	margin-top: 50px;
-    margin-bottom: -100px;
-	margin-left: -550px;
+	top: 490px;
+	left: 0px;
+	text-align: left;
 }
 #About .Mypic
 {
 	max-width: 100%;
     max-height: 100%;
 	width: 100%;
-	position: relative;
-	object-fit: contain;
-	margin-top: -250px;
-	margin-right: -750px;
+	position: absolute;	
+	top: 400px;
+	left: 390px
 }
 
 #education{
@@ -367,7 +366,7 @@ body {
     color: white;
 }
 span{
-    color: gold;
+    color :salmon;
 }
 @media only screen and (min-width: 1200px) {
 	/* header */
