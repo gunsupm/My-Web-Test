@@ -1,398 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-html{
-    font-size: 10px;
-    font-family: 'Prompt',sans-serif;
-}
-a {
-	text-decoration: none;
-}
-.container {
-	min-height: 100vh;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.brand h1 {
-	font-size: 3rem;
-	text-transform: uppercase;
-	color: white;
-}
-.brand h1 span {
-	color: salmon;
-} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Me.Com</title>
+</head>
+<body>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#Home">
+                      <h1>Gun <span>ner</span></h1>
+                    </a>
+                  </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                    <div class="bar"></div>
+                </div>
+                    <ul>
+                        <li><a href="#Home" data-after="Home">Home</a></li>
+                        <li><a href="#About" data-after="About">About</a></li>
+                        <li><a href="#education" data-after="Education">Education</a></li>
+                        <li><a href="#hobby" data-after="Hobby">Hobby</a></li>
+                        <li><a href="#contact" data-after="Contact">Contact</a></li>
+                    </ul>
 
-#header {
-	position: fixed;
-	z-index: 1000;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: auto;
-}
-#header .header {
-	min-height: 8vh;
-	background-color: navy;
-	transition: 0.3s ease background-color;
-}
-#header .nav-bar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 100%;
-	max-width: 1300px;
-	padding: 0 10px;
-}
-#header .nav-list ul {
-	list-style: none;
-	position: absolute;
-	background-color: rgb(31, 30, 30);
-	width: 100vw;
-	height: 100vh;
-	left: 100%;
-	top: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	z-index: 1;
-	overflow-x: hidden;
-	transition: 0.5s ease left;
-}
-#header .nav-list ul.active {
-	left: 0%;
-}
-#header .nav-list ul a {
-	font-size: 2.5rem;
-	font-weight: 500;
-	letter-spacing: 0.2rem;
-	text-decoration: none;
-	color:gold;
-	text-transform: uppercase;
-	padding: 20px;
-	display: block;
-}
-#header .nav-list ul a::after {
-	content: attr(data-after);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	color: black;
-	font-size: 13rem;
-	letter-spacing: 50px;
-	z-index: -1;
-	transition: 0.3s ease letter-spacing;
-}
-#header .nav-list ul li:hover a::after {
-	transform: translate(-50%, -50%) scale(1);
-	letter-spacing: initial;
-}
-#header .nav-list ul li:hover a {
-	color: crimson;
-}
-/*ส่วน nav มือถือ*/
-/* ซ่อนเมนูเฉพาะบนมือถือ (จอเล็ก) */
-@media screen and (max-width: 768px) {
-    .nav-list {
-        display: none; /* ซ่อนเมนู */
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        width: 250px;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 20px;
-        border-radius: 10px;
-    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Home">
+        <div class="HmP container">
+            <div>
+                <h1>Welcome To   <span></span></h1>
+                <h1 style="color: #FF8FAB;">My profile <span></span></h1>
+                <h1 style="color: salmon;">Who Am I ? <span></span></h1>
+                <a href="#About" type="button" class="cta">Learn More</a>
+            </div>
+        </div>
+    </section>
 
-    /* แสดงเมนูเมื่อกดปุ่ม Hamburger */
-    .nav-list.active {
-        display: flex;
-    }
-}
+    <section id="About">
+        <div class="about container">
+            <h1>About Me</h1>
 
-/* แสดงเมนูเมื่อกด Hamburger */
-.nav-list.active {
-    display: flex;
-}
+            <div class="Aboutfont">
+                <h2><span>Hi I'm</span> Supanut Ongcharoensuk. <br> 
+                 <span>My NickName Is</span>  Gun  <br>
+                                <span>I'm</span> 20 <span>Year old.</span>  <br>
+                                <span>My birthday is</span> the 8th of August 2003. <br>
+                                <span>I'm form </span> Thailand. <br></h2>
+            </div>
+            <div class="Mypic"><img src="pic/mepic.jpg" height="400px"></div>
+    </section>
 
-/* ทำให้เมนูอยู่ตรงกลาง */
-.nav-list ul {
-    list-style: none;
-    padding: 0;
-}
+    <section id="education">
+        <div class="education container">
+                <h1>Education</h1>
+        <table align="center"  width="550px" hight="600px" >
+        </td>
+                </tr>
+                <tr>
+                    <td align="center" ><img src="pic/logo-removebg-preview.png" height="200px"></td>
+                    </td>
+                    <td align="center" >
+                        <font size="6" style="color:#000000;"  >
+                            Primary school <br>
+                        </font>
+                        <font size="5" style="color:#FF8FAB;" >
+                            Supitchaya School
+                        </font>
+                    </td>
+                            </tr>
+                            <tr>
+                                <td align="center" ><br><img src="pic/logorst-removebg.png" height="200px"></td>
+                                <td align="center"  >
+                                    <font size="6" style="color:#000000;" >
+                                        High school <br>
+                                    </font>
+                                    <font size="5" style="color:#FF8FAB;" >
+                                        Rattanakosin somphot <br>bang khun thian school
+                                    </font>
+                                </td>
+                            </tr>
+            </table>
+    </div>
+    </section>
 
-.nav-list ul li {
-    margin: 10px 0;
-}
+    <section id="hobby">
+        <div class="hobby container">
+<h1>Hobby</h1>
+<table   width="80%" align="center">
+    <tr>
+        <td bgcolor align="center" style="color: rgb(255, 255, 255);" width="50%" height="500px"> 
+            <div  align="center" style="width : 500px ; height : 500px ; float : left ; border-style:solid; border-width: 5px; padding : 10px; margin : 10px; "><img src="pic/badminton.jpg" width="50%" height="300px"> <br>   <font size="5" style="color:#FF8FAB;" > 
+    In my free time, I enjoy playing badminton.</font> </div>
+    <div align="center" style="width : 500px ; height : 500px ; float : left ; border-style:solid; border-width: 5px; padding : 10px; margin : 10px; "><img src="pic/gamee.jpg" width="50%" height="300px"> <br>   <font size="5" style="color:#FF8FAB;" > 
+    And i’m a big fan of playing game. </div>
+    </font>
+        </td>
+        </tr>
+    </table>
+        </div>
+    </section>
 
-.nav-list ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Hamburger Animation */
-.hamburger {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-}
-
-.hamburger .bar {
-    height: 3px;
-    width: 30px;
-    background-color: white;
-    position: relative;
-}
-
-.hamburger .bar::before,
-.hamburger .bar::after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    transition: 0.3s ease-in-out;
-}
-
-.hamburger .bar::before {
-    top: -8px;
-}
-
-.hamburger .bar::after {
-    top: 8px;
-}
-
-/* เปลี่ยนเป็น X เมื่อ active */
-.hamburger.active .bar {
-    background: transparent;
-}
-
-.hamburger.active .bar::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.hamburger.active .bar::after {
-    transform: rotate(-45deg);
-    top: 0;
-}
-
-
-body {
-	margin: 0;
-	transition: background-color 0.5s /* ทำให้สีพื้นหลังค่อยๆ เปลี่ยนภายใน 0.5 วินาที*/ ease-in-out;/* ทำให้เปลี่ยนสีแบบ เริ่มช้า-เร็ว-จบช้า ดูลื่นไหล*/
-  } 
-
-#Home {
-    background-size: cover;
-    background-position: top center;
-	position: relative;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 1;
-}
-#Home .Hmp {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 50px;
-	justify-content: flex-start;
-}
-
-#Home h1 {
-	display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: black;
-
-}
-
-#Home .cta{
-    display: inline-block;
-    padding: 10px 30px;
-    color: black;
-    background-color: transparent;
-    border: 2px solid #000000;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    margin-top: 50px;
-    transition: .5s ease background-color;
-    transition-property: bbackground-color, color;
-}
-#Home .cta:hover
-{
-    color: white;
-    background-color: #000000;
-	
-}
-
-#About{
-	height: 100vh;
-	background-size: cover;
-	background-position: top center;
-	position: relative;
-	left: 0;
-	top: 0;
-	width: 100%;
-	z-index: 1;
-}
-#About .about{
-	
-    flex-direction: column;
-    text-align: center;
-    max-width: 1500px;
-    margin: 0  auto;
-    padding: 100px 0;
-}
-#About h1{
-    display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: absolute;
-	color: #000000;
-    text-transform: uppercase;
-    top: 350px;
-	left: 400px;
-}
-#About .Aboutfont
-{
-	width: fit-content;
-	font-size: 2rem;
-	position: absolute;
-    text-transform: uppercase;
-	top: 490px;
-	left: 400px;
-	text-align: left;
-}
-#About .Mypic
-{
-	max-width: 100%;
-    max-height: 100%;
-	width: 100%;
-	position: absolute;	
-	top: 400px;
-	left: 390px
-}
-
-#education{
-    background-size: cover;
-    background-position: top center;
-	position: relative;
-	z-index: 1;
-}
-#education .education{
-    flex-direction: column;
-    text-align: center;
-    max-width: 1500px;
-    margin: 0  auto;
-    padding: 100px 0;
-}
-#education h1{
-    display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: black;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
-#hobby{
-    background-size: cover;
-    background-position: top center;
-	position: relative;
-	z-index: 1;  
-}
-#hobby .hobby{
-    flex-direction: column;
-    text-align: center;
-    max-width: 1500px;
-    margin: 0  auto;
-    padding: 100px 0;
-}
-#hobby h1{
-    display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: black;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
-
-#contact{
-    background-size: cover;
-    background-position: top center;
-	position: relative;
-	z-index: 1;  
-}
-#contact .contact{
-    flex-direction: column;
-    text-align: center;
-    max-width: 1500px;
-    margin: 0  auto;
-    padding: 100px 0;
-}
-#contact h1{
-    display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: black;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
-#contact h2{
-    display: block;
-    width: fit-content;
-    font-size: 3rem;
-    position: relative;
-    color: white;
-}
-span{
-    color :salmon;
-}
-@media only screen and (min-width: 1200px) {
-	/* header */
-	#header .hamburger {
-		display: none;
-	}
-	#header .nav-list ul {
-		position: initial;
-		display: block;
-		height: auto;
-		width: fit-content;
-		background-color: transparent;
-	}
-	#header .nav-list ul li {
-		display: inline-block;
-	}
-	#header .nav-list ul li a {
-		font-size: 1.8rem;
-	}
-	#header .nav-list ul a:after {
-		display: none;
-	}
-	/* End header */
-
-	#services .service-bottom .service-item {
-		flex-basis: 22%;
-		margin: 1.5%;
-	}
-}
+    <section id="contact">
+        <div class="contact container">
+            <h1>Contact</h1>
+             <table align="center"  width="500px" hight="600px" style="border: #ffffff;" >
+        </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="white"><img src="pic/ig.png" height="150px"></td>
+                    </td>
+                    <td align="center">
+                        <font size="6" style="color:#FF8FAB;"  >
+                            Instagram <br>
+                        </font>
+                        <font size="6"  >
+                            <h2><a href="https://www.instagram.com/_xxgunner/">xxgunner</a></h2>
+                    </td>
+                            </tr>
+                            <tr>
+                                <td align="center" bgcolor="white"><br><img src="pic/fb.jpg" height="150px" style="border-width: 1px;border-color: white;border-style: solid;"></td>
+                                <td align="center">
+                                    <font size="6" style="color:#FF8FAB;" >
+                                        Facebook <br>
+                                    </font>
+                                    <font size="5" style="color:#FF8FAB;" >
+                                       <h2><a href="https://www.facebook.com/profile.php?id=100087179363553&locale=th_TH">Supanut Ongcharoensuk </a></h2>
+                                    </font>
+                                </td>
+                            </tr>
+            </table>    
+        </div>
+    </section>
+    <script src="script.js" defer></script>
+</body>
+</html>
