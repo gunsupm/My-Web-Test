@@ -25,7 +25,8 @@ a {
 }
 .brand h1 span {
 	color: salmon;
-}
+} 
+
 #header {
 	position: fixed;
 	z-index: 1000;
@@ -96,63 +97,107 @@ a {
 #header .nav-list ul li:hover a {
 	color: crimson;
 }
-#header .hamburger {
-	height: 60px;
-	width: 60px;
-	display: inline-block;
-	border: 3px solid white;
-	border-radius: 50%;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 100;
-	cursor: pointer;
-	transform: scale(0.8);
-	margin-right: 20px;
-}
-#header .hamburger:after {
-	position: absolute;
-	content: '';
-	height: 100%;
-	width: 100%;
-	border-radius: 50%;
-	border: 3px solid white;
-	animation: hamburger_puls 1s ease infinite;
-}
-#header .hamburger .bar {
-	height: 2px;
-	width: 30px;
-	position: relative;
-	background-color: white;
-	z-index: -1;
-}
-#header .hamburger .bar::after,
-#header .hamburger .bar::before {
-	content: '';
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	left: 0;
-	background-color: white;
-	transition: 0.3s ease;
-	transition-property: top, bottom;
-}
-#header .hamburger .bar::after {
-	top: 8px;
-}
-#header .hamburger .bar::before {
-	bottom: 8px;
-}
-#header .hamburger.active .bar::before {
-	bottom: 0;
-}
-#header .hamburger.active .bar::after {
-	top: 0;
+/*ส่วน nav มือถือ*/
+/* ซ่อนเมนูเฉพาะบนมือถือ (จอเล็ก) */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        display: none; /* ซ่อนเมนู */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 250px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    /* แสดงเมนูเมื่อกดปุ่ม Hamburger */
+    .nav-list.active {
+        display: flex;
+    }
 }
 
-#Home {
+/* แสดงเมนูเมื่อกด Hamburger */
+.nav-list.active {
+    display: flex;
+}
+
+/* ทำให้เมนูอยู่ตรงกลาง */
+.nav-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list ul li {
+    margin: 10px 0;
+}
+
+.nav-list ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hamburger Animation */
+.hamburger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 30px;
     background-color: white;
+    position: relative;
+}
+
+.hamburger .bar::before,
+.hamburger .bar::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.hamburger .bar::before {
+    top: -8px;
+}
+
+.hamburger .bar::after {
+    top: 8px;
+}
+
+/* เปลี่ยนเป็น X เมื่อ active */
+.hamburger.active .bar {
+    background: transparent;
+}
+
+.hamburger.active .bar::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger.active .bar::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+body {
+	margin: 0;
+	transition: background-color 0.5s /* ทำให้สีพื้นหลังค่อยๆ เปลี่ยนภายใน 0.5 วินาที*/ ease-in-out;/* ทำให้เปลี่ยนสีแบบ เริ่มช้า-เร็ว-จบช้า ดูลื่นไหล*/
+  } 
+
+#Home {
     background-size: cover;
     background-position: top center;
 	position: relative;
@@ -168,12 +213,7 @@ a {
 	padding: 0 50px;
 	justify-content: flex-start;
 }
-#Home .Hmp{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
-    justify-content: flex-start;
-}
+
 #Home h1 {
 	display: block;
 	width: fit-content;
@@ -204,13 +244,17 @@ a {
 }
 
 #About{
-    background-color: #ffffff;
-    background-size: cover;
-    background-position: top center;
+	height: 100vh;
+	background-size: cover;
+	background-position: top center;
 	position: relative;
-	z-index: 1;  
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
 }
 #About .about{
+	
     flex-direction: column;
     text-align: center;
     max-width: 1500px;
@@ -249,7 +293,6 @@ a {
 }
 
 #education{
-    background-color: #ffffff;
     background-size: cover;
     background-position: top center;
 	position: relative;
@@ -272,7 +315,6 @@ a {
     margin-bottom: 50px;
 }
 #hobby{
-    background-color: #ffffff;
     background-size: cover;
     background-position: top center;
 	position: relative;
@@ -296,7 +338,6 @@ a {
 }
 
 #contact{
-    background-color: #ffffff;
     background-size: cover;
     background-position: top center;
 	position: relative;
