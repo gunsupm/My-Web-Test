@@ -98,6 +98,7 @@ a {
 	color: crimson;
 }
 /*ส่วน nav มือถือ*/
+
 /* ซ่อนเมนูเฉพาะบนมือถือ (จอเล็ก) */
 @media screen and (max-width: 768px) {
     .nav-list {
@@ -116,6 +117,27 @@ a {
     /* แสดงเมนูเมื่อกดปุ่ม Hamburger */
     .nav-list.active {
         display: flex;
+    }
+}
+
+/* แสดงเมนูปกติบนหน้าจอใหญ่ (Desktop) */
+@media screen and (min-width: 769px) {
+    .nav-list {
+        display: flex !important; /* บังคับให้แสดง */
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+    }
+
+    .nav-list ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    /* ซ่อนปุ่ม Hamburger บนหน้าจอใหญ่ */
+    .hamburger {
+        display: none;
     }
 }
 
